@@ -49,13 +49,22 @@ export function getStatusColor(status: string) {
   }
 }
 
-export function debounce<T extends (...args: unknown[]) => unknown>(
-  func: T,
-  wait: number
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout;
+// export function debounce<T extends (...args: unknown[]) => unknown>(
+//   func: T,
+//   wait: number
+// ): (...args: Parameters<T>) => void {
+//   let timeout: NodeJS.Timeout;
+//   return (...args: Parameters<T>) => {
+//     clearTimeout(timeout);
+//     timeout = setTimeout(() => func(...args), wait);
+//   };
+// }
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
+  let timeout: ReturnType<typeof setTimeout>;
   return (...args: Parameters<T>) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
+    timeout = setTimeout(() => fn(...args), delay);
   };
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */

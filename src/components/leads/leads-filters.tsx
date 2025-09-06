@@ -24,12 +24,13 @@ export function LeadsFilters() {
   const [searchInput, setSearchInput] = useState(leadFilters.search || '');
 
   // Debounced search
-  const debouncedSearch = useCallback(
-    debounce((value: string) => {
-      setLeadFilters({ search: value || undefined });
-    }, 300),
-    []
-  );
+  const debouncedSearch: (value: string) => void = useCallback(
+  debounce((value: string) => {
+    setLeadFilters({ search: value || undefined });
+  }, 300),
+  []
+);
+
 
   const handleSearchChange = (value: string) => {
     setSearchInput(value);

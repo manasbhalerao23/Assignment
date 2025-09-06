@@ -175,7 +175,7 @@ export function CampaignsTable() {
                       </div>
                     </TableCell>
                     <TableCell className="text-gray-600">
-                      {formatDate(campaign.createdAt)}
+                      {campaign.createdAt ? formatDate(campaign.createdAt) : '-'}
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center space-x-1">
