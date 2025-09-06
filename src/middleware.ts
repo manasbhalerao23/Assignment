@@ -4,7 +4,7 @@ import { auth } from "./lib/auth";
 
 export async function middleware(request: NextRequest) {
   // Check if the request is for a protected route
-  const protectedPaths = ['/dashboard', '/leads', '/campaigns', '/settings'];
+  const protectedPaths = ['/dashboard', '/dashboard/leads', '/dashboard/campaigns', '/dashboard/settings'];
   const isProtectedPath = protectedPaths.some(path => 
     request.nextUrl.pathname.startsWith(path)
   );

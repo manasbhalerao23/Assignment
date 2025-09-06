@@ -27,19 +27,19 @@ const navigationItems = [
   },
   {
     name: 'Leads',
-    href: '/leads',
+    href: '/dashboard/leads',
     icon: Users,
     key: 'leads'
   },
   {
     name: 'Campaigns',
-    href: '/campaigns',
+    href: '/dashboard/campaigns',
     icon: Target,
     key: 'campaigns'
   },
   {
     name: 'Settings',
-    href: '/settings',
+    href: '/dashboard/settings',
     icon: Settings,
     key: 'settings'
   },

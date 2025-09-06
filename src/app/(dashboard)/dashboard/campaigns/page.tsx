@@ -19,7 +19,7 @@ export default function CampaignsPage() {
         </div>
         <Button 
           onClick={() => openModal('create')}
-          className="bg-linkbird-500 hover:bg-linkbird-600"
+          className="bg-amber-700"
         >
           <Plus className="h-4 w-4 mr-2" />
           New Campaign

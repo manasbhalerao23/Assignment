@@ -1,9 +1,11 @@
 'use client';
 
+import { GlobalModal } from '@/components/globalmodel';
 import { MainLayout } from '@/components/layout/main-layout';
 import { useSession } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+
 
 export default function DashboardLayout({
   children,
@@ -31,5 +33,5 @@ export default function DashboardLayout({
     return null;
   }
 
-  return <MainLayout>{children}</MainLayout>;
+  return <MainLayout>{children} <GlobalModal/> </MainLayout>;
 }

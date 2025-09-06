@@ -8,9 +8,9 @@ import { cn } from '@/lib/utils';
 
 const breadcrumbLabels: Record<string, string> = {
   '/dashboard': 'Dashboard',
-  '/leads': 'Leads',
-  '/campaigns': 'Campaigns',
-  '/settings': 'Settings',
+  '/dashboard/leads': 'Leads',
+  '/dashboard/campaigns': 'Campaigns',
+  '/dashboard/settings': 'Settings',
 };
 
 export function Header() {

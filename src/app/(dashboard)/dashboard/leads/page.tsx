@@ -19,13 +19,13 @@ export default function LeadsPage() {
           <h1 className="text-3xl font-bold">Leads</h1>
           <p className="text-gray-600 mt-1">Manage and track your lead interactions</p>
         </div>
-        <Button 
+        {/* <Button 
           onClick={() => openModal('create')}
-          className="bg-linkbird-500 hover:bg-linkbird-600"
+          className="bg-amber-800 hover:cursor-pointer"
         >
           <Plus className="h-4 w-4 mr-2" />
           Add Lead
-        </Button>
+        </Button> */}
       </div>
 
       <LeadsFilters />

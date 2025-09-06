@@ -72,7 +72,7 @@ CREATE TABLE "user" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"email" text NOT NULL,
-	"emailVerified" timestamp,
+	"emailVerified" boolean DEFAULT false NOT NULL,
 	"image" text,
 	"createdAt" timestamp DEFAULT now(),
 	"updatedAt" timestamp DEFAULT now(),
