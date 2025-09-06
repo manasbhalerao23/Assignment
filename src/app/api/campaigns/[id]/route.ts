@@ -9,7 +9,7 @@ type CampaignUpdate = Partial<typeof campaigns.$inferInsert>;
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await auth.api.getSession({
@@ -20,7 +20,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const campaignId = parseInt(context.params.id);
+    const {id} = await context.params;
+    const campaignId = parseInt(id);
 
     const campaign = await db
       .select()
@@ -41,7 +42,7 @@ export async function GET(
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string } >}
 ) {
   try {
     const session = await auth.api.getSession({
@@ -52,7 +53,8 @@ export async function PATCH(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const campaignId = parseInt(context.params.id);
+    const { id } = await context.params;
+    const campaignId = parseInt(id);
     const body = await request.json();
     const { name, description, status } = body;
 
@@ -90,7 +92,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string } >}
 ) {
   try {
     const session = await auth.api.getSession({
@@ -101,7 +103,8 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const campaignId = parseInt(context.params.id);
+    const {id} = await context.params;
+    const campaignId = parseInt(id);
 
     // Check if campaign has leads
     const leadsCount = await db

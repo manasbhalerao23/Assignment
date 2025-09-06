@@ -6,7 +6,7 @@ import { auth } from '@/lib/auth';
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string } >}
 ) {
   try {
     const session = await auth.api.getSession({
@@ -17,7 +17,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const leadId = parseInt(context.params.id);
+    const {id} = await context.params;
+    const leadId = parseInt(id);
 
     // Get lead with campaign information
     const leadData = await db
@@ -72,7 +73,7 @@ export async function GET(
 
 export async function PATCH(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string } >}
 ) {
   try {
     const session = await auth.api.getSession({
@@ -83,7 +84,8 @@ export async function PATCH(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const leadId = parseInt(context.params.id);
+    const {id} = await context.params;
+    const leadId = parseInt(id);
     const body = await request.json();
     const { status } = body;
 
