@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, integer, serial, varchar, decimal } from 'drizzle-orm/pg-core';
+import { pgTable, text, timestamp, integer, serial, varchar, decimal, primaryKey } from 'drizzle-orm/pg-core';
 
 // Users table (managed by Better Auth)
 export const users = pgTable('user', {
@@ -81,4 +81,14 @@ export const leadInteractions = pgTable('lead_interactions', {
   date: timestamp('date', { mode: 'date' }).defaultNow(),
   userId: text('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
   createdAt: timestamp('created_at', { mode: 'date' }).defaultNow(),
+});
+
+
+export const verification = pgTable("verification", {
+  id: text("id").primaryKey(),
+  identifier: text("identifier").notNull(),
+  value: text("value").notNull(), // <-- this is REQUIRED
+  expiresAt: timestamp("expiresAt", { mode: "date" }).notNull(),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  updatedAt: timestamp("updatedAt", { mode: "date" }).defaultNow(),
 });

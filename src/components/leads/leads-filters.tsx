@@ -111,7 +111,7 @@ export function LeadsFilters() {
             <span className="text-sm text-gray-500">Active filters:</span>
             {leadFilters.search && (
               <Badge variant="secondary">
-                Search: "{leadFilters.search}"
+                Search: {leadFilters.search}
                 <X 
                   className="h-3 w-3 ml-1 cursor-pointer" 
                   onClick={() => {

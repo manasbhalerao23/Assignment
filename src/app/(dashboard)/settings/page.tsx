@@ -130,7 +130,7 @@ export default function SettingsPage() {
                   <Button variant="outline">Regenerate</Button>
                 </div>
                 <p className="text-xs text-gray-500">
-                  Keep your API key secure and don't share it publicly
+                  {"Keep your API key secure and don't share it publicly"}
                 </p>
               </div>
             </CardContent>
