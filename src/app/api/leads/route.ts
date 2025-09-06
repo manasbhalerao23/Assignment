@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { leads, campaigns } from '@/lib/schema';
-import { eq, and, ilike, desc, asc } from 'drizzle-orm';
+import { eq, and, ilike, desc, asc, SQL } from 'drizzle-orm';
 import { auth } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
@@ -21,25 +21,32 @@ export async function GET(request: NextRequest) {
     const status = searchParams.get('status');
     const campaignId = searchParams.get('campaignId');
 
-    let whereCondition = eq(leads.userId, session.user.id);
+     const filters: SQL[] = [eq(leads.userId, session.user.id)];
+     if (search) filters.push(ilike(leads.email, `%${search}%`));
+      if (status) filters.push(eq(leads.status, status));
+      if (campaignId) filters.push(eq(leads.campaignId, parseInt(campaignId)));
+
+      const whereCondition = and(...filters); // always defined
+
+    //let whereCondition = eq(leads.userId, session.user.id);
 
     // Add search filter
-    if (search) {
-      whereCondition = and(
-        whereCondition,
-        ilike(leads.email, `%${search}%`)
-      );
-    }
+    // if (search) {
+    //   whereCondition = and(
+    //     whereCondition,
+    //     ilike(leads.email, `%${search}%`)
+    //   );
+    // }
 
-    // Add status filter
-    if (status) {
-      whereCondition = and(whereCondition, eq(leads.status, status));
-    }
+    // // Add status filter
+    // if (status) {
+    //   whereCondition = and(whereCondition, eq(leads.status, status));
+    // }
 
-    // Add campaign filter
-    if (campaignId) {
-      whereCondition = and(whereCondition, eq(leads.campaignId, parseInt(campaignId)));
-    }
+    // // Add campaign filter
+    // if (campaignId) {
+    //   whereCondition = and(whereCondition, eq(leads.campaignId, parseInt(campaignId)));
+    // }
 
     const offset = (page - 1) * limit;
 
