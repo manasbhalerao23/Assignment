@@ -4,6 +4,9 @@ import { campaigns, leads } from '@/lib/schema';
 import { eq, and, count } from 'drizzle-orm';
 import { auth } from '@/lib/auth';
 
+type CampaignUpdate = Partial<typeof campaigns.$inferInsert>;
+
+
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -53,7 +56,7 @@ export async function PATCH(
     const body = await request.json();
     const { name, description, status } = body;
 
-    const updateData: any = { updatedAt: new Date() };
+    const updateData: CampaignUpdate = { updatedAt: new Date() };
     
     if (name !== undefined) updateData.name = name;
     if (description !== undefined) updateData.description = description;

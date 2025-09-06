@@ -111,5 +111,14 @@ export interface LeadDetailState {
 export interface ModalState {
   isOpen: boolean;
   type: 'create' | 'edit' | 'delete' | null;
-  data?: any;
+  data?: unknown;
+}
+
+export interface Interaction {
+  id: number;
+  type: string;
+  subject?: string;
+  content?: string;
+  date?: string;
+  createdAt: string;
 }

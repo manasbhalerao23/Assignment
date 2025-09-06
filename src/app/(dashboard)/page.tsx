@@ -6,7 +6,25 @@ import { Badge } from '@/components/ui/badge';
 import { formatDate, formatDateTime } from '@/lib/utils';
 import { BarChart3, Users, Target, TrendingUp } from 'lucide-react';
 
-async function fetchDashboardStats() {
+interface RecentActivity {
+  type: string;
+  subject?: string;
+  date: string; // ISO string
+}
+
+interface DashboardStats {
+  totalCampaigns: number;
+  activeCampaigns: number;
+  totalLeads: number;
+  convertedLeads: number;
+  averageResponseRate: number;
+  recentActivity: RecentActivity[];
+}
+
+
+
+
+async function fetchDashboardStats():Promise<DashboardStats> {
   const response = await fetch('/api/dashboard/stats');
   if (!response.ok) {
     throw new Error('Failed to fetch dashboard stats');
@@ -15,10 +33,10 @@ async function fetchDashboardStats() {
 }
 
 export default function DashboardPage() {
-  const { data: stats, isLoading } = useQuery({
-    queryKey: ['dashboard-stats'],
-    queryFn: fetchDashboardStats,
-  });
+  const { data: stats, isLoading, isError, error } = useQuery<DashboardStats>({
+  queryKey: ['dashboard-stats'],
+  queryFn: fetchDashboardStats,
+});
 
   if (isLoading) {
     return (
@@ -100,8 +118,8 @@ export default function DashboardPage() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {stats?.recentActivity?.length > 0 ? (
-              stats.recentActivity.map((activity: any, index: number) => (
+            {stats?.recentActivity?.length  ? (
+              stats.recentActivity.map((activity, index: number) => (
                 <div
                   key={index}
                   className="flex items-start space-x-4 p-4 border rounded-lg"

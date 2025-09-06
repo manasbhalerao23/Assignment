@@ -22,7 +22,7 @@ interface AppState {
 
   // Modal state
   modal: ModalState;
-  openModal: (type: 'create' | 'edit' | 'delete', data?: any) => void;
+  openModal: (type: 'create' | 'edit' | 'delete', data?: unknown) => void;
   closeModal: () => void;
 
   // Lead filters

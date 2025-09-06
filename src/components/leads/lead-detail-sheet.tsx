@@ -27,6 +27,7 @@ import {
   X
 } from 'lucide-react';
 import { toast } from 'sonner';
+import { Interaction } from '@/types';
 
 const statusOptions = [
   { value: 'pending', label: 'Pending' },
@@ -329,7 +330,7 @@ export function LeadDetailSheet() {
                 {/* Interactions List */}
                 {lead.interactions?.length > 0 ? (
                   <div className="space-y-3">
-                    {lead.interactions.map((interaction: any, index: number) => (
+                    {lead.interactions.map((interaction: Interaction, index: number) => (
                       <div 
                         key={interaction.id || index} 
                         className="flex items-start space-x-3 p-3 border rounded-lg"
