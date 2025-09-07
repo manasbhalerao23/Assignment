@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 /* Custom CSS variables for consistent theming */
 :root {
+  --color-linkbird-50: #eff6ff;
+  --color-linkbird-100: #dbeafe;
+  --color-linkbird-200: #bfdbfe;
+  --color-linkbird-300: #93c5fd;
+  --color-linkbird-400: #60a5fa;
+  --color-linkbird-500: #3b82f6;
+  --color-linkbird-600: #2563eb;
+  --color-linkbird-700: #1d4ed8;
+  --color-linkbird-800: #1e40af;
+  --color-linkbird-900: #1e3a8a;
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
