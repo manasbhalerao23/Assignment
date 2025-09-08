@@ -17,13 +17,13 @@ export function GlobalModal() {
         </h2>
 
         {/* Render content based on modal.type */}
-        {modal.type === 'create' && <p>Form for creating a campaign goes here</p>}
+        {modal.type === 'create' && <p>Form for creating a campaign</p>}
         {modal.type === 'edit' && <p>Edit form for {JSON.stringify(modal.data)}</p>}
         {modal.type === 'delete' && <p>Are you sure you want to delete?</p>}
 
         <button
           onClick={closeModal}
-          className="mt-4 px-4 py-2 bg-amber-700 text-white rounded-md"
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md"
         >
           Close
         </button>

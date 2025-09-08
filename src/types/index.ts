@@ -15,8 +15,7 @@ export interface Campaign {
   status: 'draft' | 'active' | 'paused' | 'completed';
   totalLeads: number;
   successfulLeads: number;
-  responseRate: string;
-  userId: string;
+  userId?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

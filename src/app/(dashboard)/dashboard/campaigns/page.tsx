@@ -1,10 +1,8 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
 import { CampaignsTable } from '@/components/campaigns/campaign-table';
-import { CampaignStats } from '@/components/campaigns/campaign-stats';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
+import { CirclePlus } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 
 export default function CampaignsPage() {
@@ -19,14 +17,12 @@ export default function CampaignsPage() {
         </div>
         <Button 
           onClick={() => openModal('create')}
-          className="bg-amber-700"
+          className="bg-blue-600 hover:bg-blue-700 text-white hover:cursor-pointer"
         >
-          <Plus className="h-4 w-4 mr-2" />
-          New Campaign
+          <CirclePlus className="h-4 w-4 mr-2" />
+          Create Campaign
         </Button>
       </div>
-
-      <CampaignStats />
       <CampaignsTable />
     </div>
   );
