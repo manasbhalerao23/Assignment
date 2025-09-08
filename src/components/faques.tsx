@@ -11,10 +11,34 @@ export default function FaqSection() {
       answer: "LinkedIn automation refers to using software tools to automate repetitive tasks on LinkedIn such as sending connection requests, messages, and follow-ups. Our tool helps you scale your outreach activities while maintaining a personal touch.",
     },
     {
+      question: "How does the free trial work?",
+      answer: "We offer a 14-day free trial with no credit card required. During the trial, you can access all features of our Professional plan including connection requests, lead generation, and message sequences. Usage limits apply.",
+    },
+    {
       question: "How does the AI lead generation work?",
       answer: "Our AI algorithm analyzes your ideal customer profile and searches LinkedIn for matching prospects. It considers factors like industry, job title, company size, and engagement patterns to identify the most relevant leads for your business.",
     },
-    // Add all other FAQs here...
+    {
+      question: "What is the Lifetime Deal offer?",
+      answer: "Our Lifetime Deal is a one-time payment that gives you permanent access to our platform instead of paying monthly or yearly fees. It includes all Professional plan features plus free updates for life. It's ideal for long-term users.",
+    },
+    {
+      question: "What are the different lead generation methods?",
+      answer: "We offer three main methods: 1) AI-based search, which uses our algorithm to find relevant prospects; 2) LinkedIn URL imports, which extract leads from LinkedIn search results; and 3) CSE approach for highly targeted list building based on specific criteria.",
+    },
+    {
+      question: "Can I upgrade or downgrade mt plan?",
+      answer: "Yes, you can upgrade or downgrade your plan at any time through your account dashboard. When upgrading, you'll only pay the prorated difference. When downgrading, your new plan will take effect at the next billing cycle.",
+    },
+    {
+      question: "How do message sequences work?",
+      answer: "After a connection is accepted, our system automatically sends a welcome message followed by a sequence of follow-up messages at specified intervals. These sequences can be personalized with custom variables and conditional logic based on prospect responses.",
+    },
+    {
+      question: "How do you handle my data?",
+      answer: "We take data privacy seriously. Your data is encrypted in transit and at rest. We don't sell your information to third parties. Our privacy policy outlines how we collect, use, and protect your data in compliance with GDPR and other regulations.",
+    },
+    
   ];
 
   const toggleFaq = (index: number) => {
@@ -26,8 +50,8 @@ export default function FaqSection() {
       <div className="container pb-[100px] max-w-6xl">
         <div className="flex justify-center w-full mb-[23px]">
           <div className="flex justify-center items-center w-full bg-gray-100 dark:bg-[#060C14]">
-            <div className="text-gray-900 dark:text-white flex items-center gap-[14px] border border-gray-200 dark:border-[#232323] rounded-full px-[13px] py-[9px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+            <div className="text-gray-900 dark:text-white flex items-center gap-[14px] border border-gray-200 dark:border-[#232323] rounded-full px-[13px] py-[12px]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                 <path d="M15 4V2"></path>
                 <path d="M15 16v-2"></path>
                 <path d="M8 9h2"></path>
