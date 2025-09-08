@@ -4,21 +4,16 @@ import { useEffect } from 'react';
 import { useStore } from '@/store/useStore'; // Adjust path as needed
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const theme = useStore((state) => state.theme);
+  const theme = useStore((state) => state.theme); // 'light' | 'dark'
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    
+    const root = document.documentElement;
+
+    // Remove any existing theme classes
     root.classList.remove('light', 'dark');
 
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-      root.classList.add(systemTheme);
-    } else {
-      root.classList.add(theme);
-    }
+    // Apply the selected theme
+    root.classList.add(theme);
   }, [theme]);
 
   return <>{children}</>;
