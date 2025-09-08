@@ -181,13 +181,13 @@ export default function HomePage() {
 
           <ScrollReveal>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              <span className="bg-gray-300 bg-clip-text text-transparent">AI-Powered</span> Security and<br />
-              Features - <span className="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">No One provides</span>
+              <span className="bg-gray-300 bg-clip-text dark:text-transparent text-gray-900">AI-Powered</span> Security and<br />
+              Features - <span className="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text dark:text-transparent text-gray-900">No One provides</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <p className="text-xl text-gray-400 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               Discover how our AI-driven tools can transform your productivity and streamline your day
             </p>
           </ScrollReveal>
@@ -199,10 +199,10 @@ export default function HomePage() {
             <div className="space-y-12 flex flex-col justify-between">
               <ScrollReveal>
                 <div>
-                  <h3 className="text-2xl mb-2 bg-gradient-to-t from-gray-500 to-gray-100 bg-clip-text text-transparent">
+                  <h3 className="text-2xl mb-2 bg-gradient-to-t dark:from-gray-500 dark:to-gray-100 from-blue-600 to-gray-700 bg-clip-text text-transparent">
                     Multiple Accounts - Dedicated IPs
                   </h3>
-                  <p className="text-gray-300 dark:text-gray-100">
+                  <p className="text-gray-900 dark:text-gray-100">
                     Manage multiple LinkedIn profiles securely, with each account assigned
                     a unique IP and fingerprint to prevent detection by LinkedIn.
                   </p>
@@ -211,10 +211,10 @@ export default function HomePage() {
 
               <ScrollReveal>
                 <div>
-                  <h3 className="text-2xl mb-2 bg-gradient-to-t from-gray-500 to-gray-100 bg-clip-text text-transparent">
+                  <h3 className="text-2xl mb-2 bg-gradient-to-t dark:from-gray-500 dark:to-gray-100 from-blue-600 to-gray-700  bg-clip-text text-transparent">
                     Unlimited Campaigns & Lead Options
                   </h3>
-                  <p className="text-gray-300 dark:text-gray-100">
+                  <p className="text-gray-900 dark:text-gray-100">
                     Create unlimited campaigns and import leads in various ways: use our
                     AI-powered Lead Finder, LinkedIn search, Sales Navigator, or export
                     your own list. The possibilities are endless.
@@ -224,10 +224,10 @@ export default function HomePage() {
 
               <ScrollReveal>
                 <div>
-                  <h3 className="text-2xl mb-2 bg-gradient-to-t from-gray-500 to-gray-100 bg-clip-text text-transparent">
+                  <h3 className="text-2xl mb-2 bg-gradient-to-t dark:from-gray-500 dark:to-gray-100 from-blue-600 to-gray-700  bg-clip-text text-transparent">
                     Unified Inbox - No Need to Open LinkedIn
                   </h3>
-                  <p className="text-gray-300 dark:text-gray-100">
+                  <p className="text-gray-900 dark:text-gray-100">
                     Manage and respond to all your LinkedIn messages, leads, and campaigns
                     from one clean inbox without logging in to LinkedIn.
                   </p>
@@ -236,10 +236,10 @@ export default function HomePage() {
 
               <ScrollReveal>
                 <div>
-                  <h3 className="text-2xl mb-2 bg-gradient-to-t from-gray-500 to-gray-100 bg-clip-text text-transparent">
+                  <h3 className="text-2xl mb-2 bg-gradient-to-t dark:from-gray-500 dark:to-gray-100 from-blue-600 to-gray-700  bg-clip-text text-transparent">
                     Personalized, Automated Follow-Ups
                   </h3>
-                  <p className="text-gray-300 dark:text-gray-100">
+                  <p className="text-gray-900 dark:text-gray-100">
                     Set smart, personalized follow-up sequences that hit when your leads
                     are most likely to engage and respond.
                   </p>
@@ -287,14 +287,14 @@ export default function HomePage() {
 
       {/* 3-Step Cards */}
       <div className="flex flex-wrap justify-center gap-6">
-      <div className="relative bg-[#0a0f1c] rounded-2xl p-6 shadow-lg w-[350px] h-[450px]">
+      <div className="relative border bg-gray-50 dark:bg-[#060C14] rounded-2xl p-6 shadow-lg w-[350px] h-[450px]">
       {/* Floating avatars */}
-      <motion.div
-  initial={{ y: -8, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ delay: 0.2, duration: 1, repeat: Infinity, repeatType: "mirror" }}
->
-      <div className="absolute top-6 left-6 flex items-center space-x-2 bg-[#0f1a30] px-3 py-2 rounded-xl shadow-md">
+        <motion.div
+          initial={{ y: -8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 4, repeat: Infinity, repeatType: "mirror" }}
+        >
+      <div className="absolute top-6 left-6 flex items-center space-x-2 bg-gray-800 dark:bg-[#0f1a30] px-3 py-2 rounded-xl shadow-md">
         <Image
           src="/2.webp"
           alt="Rik Brown"
@@ -309,11 +309,11 @@ export default function HomePage() {
       </div>
       </motion.div>
 
- <motion.div
-  initial={{ y: -8, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ delay: 0.2, duration: 1, repeat: Infinity, repeatType: "mirror" }}
->
+        <motion.div
+          initial={{ y: -8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1, repeat: Infinity, repeatType: "mirror" }}
+        >
       <div className="absolute top-20 right-6 flex items-center space-x-2 bg-[#0f1a30] px-3 py-2 rounded-xl shadow-md">
         <Image
           src="/3.webp"
@@ -329,11 +329,11 @@ export default function HomePage() {
       </div>
       </motion.div>
 
-     <motion.div
-  initial={{ y: -8, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ delay: 0.2, duration: 1, repeat: Infinity, repeatType: "mirror" }}
->
+        <motion.div
+          initial={{ y: -8, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1, repeat: Infinity, repeatType: "mirror" }}
+        >
       <div className="absolute top-40 left-12 flex items-center space-x-2 bg-[#0f1a30] px-3 py-2 rounded-xl shadow-md">
         <Image
           src="/4.webp"
@@ -354,10 +354,10 @@ export default function HomePage() {
         <span className="inline-block px-3 py-1 text-sm font-semibold text-white bg-blue-600 rounded-full">
           Step 1
         </span>
-        <h3 className="text-white text-lg font-bold mt-4">
+        <h3 className="dark:text-white text-gray-900 text-lg font-bold mt-4">
           Connect Your LinkedIn
         </h3>
-        <p className="text-gray-400 text-sm mt-2 leading-relaxed">
+        <p className="dark:text-gray-400 text-gray-600 text-sm mt-2 leading-relaxed">
           Securely link one or more LinkedIn profiles. Everything runs safely in
           the background—no shady workarounds.
         </p>

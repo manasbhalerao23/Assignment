@@ -49,8 +49,8 @@ export default function FaqSection() {
     <section id="faq" className="flex flex-col items-center justify-center dark:bg-[#060C14]">
       <div className="container pb-[100px] max-w-6xl">
         <div className="flex justify-center w-full mb-[23px]">
-          <div className="flex justify-center items-center w-full bg-gray-100 dark:bg-[#060C14]">
-            <div className="text-gray-900 dark:text-white flex items-center gap-[14px] border border-gray-200 dark:border-[#232323] rounded-full px-[13px] py-[12px]">
+          <div className="flex justify-center items-center w-full dark:bg-[#060C14]">
+            <div className="bg-gray-50 dark:bg-[#060C14] text-gray-900 dark:text-white flex items-center gap-[14px] border border-gray-200 dark:border-[#232323] rounded-full px-[13px] py-[12px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
                 <path d="M15 4V2"></path>
                 <path d="M15 16v-2"></path>

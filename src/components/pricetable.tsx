@@ -399,7 +399,7 @@ export default function Pricetable(){
             </div>
             <div className="p-4 md:p-6 mt-auto">
               <a href="/dashboard">
-                <button className="hover:cursor-pointer w-full py-2 rounded-md dark:bg-blue-500 text-white dark:text-white dark:hover:bg-blue-600">
+                <button className="hover:cursor-pointer w-full py-2 rounded-md dark:bg-blue-500 text-white bg-blue-600 hover:bg-blue-700 dark:text-white dark:hover:bg-blue-600">
                   Start 7 Days Free Trial
                 </button>
               </a>

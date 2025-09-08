@@ -46,7 +46,7 @@ export default function CompareTabe(){
                     <th className="w-1/4 px-4 py-4 bg-blue-50 dark:bg-[#000841] border border-gray-200 dark:border-[#2D2D2D]">
                       <div className="flex justify-center mb-2">
                         <Image
-                          src="https://linkbird.ai/images/linkbird-dark-logo.svg"
+                          src="https://linkbird.ai/images/linkbird-light-logo.svg"
                           alt="Linkbird Logo"
                           width={120}
                           height={20}
@@ -64,7 +64,7 @@ export default function CompareTabe(){
                     <th className="w-1/4 py-4 bg-gray-50 dark:bg-[#060c14] border border-gray-200 dark:border-[#2D2D2D]">
                       <div className="flex justify-center mb-2">
                         <Image
-                          src="https://linkbird.ai/images/logo/dripify.svg"
+                          src="https://linkbird.ai/images/logo/dripify-light.svg"
                           alt="Dripify Logo"
                           width={120}
                           height={20}
@@ -82,7 +82,7 @@ export default function CompareTabe(){
                     <th className="w-1/4 py-4 bg-gray-50 dark:bg-[#060c14] border border-gray-200 dark:border-[#2D2D2D]">
                       <div className="flex justify-center mb-2">
                         <Image
-                          src="https://linkbird.ai/images/logo/expandi.svg"
+                          src="https://linkbird.ai/images/logo/expandi-light.svg"
                           alt="Expandi Logo"
                           width={120}
                           height={20}
