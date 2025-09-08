@@ -28,37 +28,7 @@ export function calculateResponseRate(successful: number, total: number): number
   return Math.round((successful / total) * 100);
 }
 
-export function getStatusColor(status: string) {
-  switch (status.toLowerCase()) {
-    case 'active':
-    case 'converted':
-    case 'responded':
-      return 'text-green-600 bg-green-50 border-green-200';
-    case 'pending':
-    case 'draft':
-      return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-    case 'paused':
-    case 'contacted':
-      return 'text-blue-600 bg-blue-50 border-blue-200';
-    case 'completed':
-      return 'text-purple-600 bg-purple-50 border-purple-200';
-    case 'rejected':
-      return 'text-red-600 bg-red-50 border-red-200';
-    default:
-      return 'text-gray-600 bg-gray-50 border-gray-200';
-  }
-}
 
-// export function debounce<T extends (...args: unknown[]) => unknown>(
-//   func: T,
-//   wait: number
-// ): (...args: Parameters<T>) => void {
-//   let timeout: NodeJS.Timeout;
-//   return (...args: Parameters<T>) => {
-//     clearTimeout(timeout);
-//     timeout = setTimeout(() => func(...args), wait);
-//   };
-// }
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
   let timeout: ReturnType<typeof setTimeout>;
@@ -68,3 +38,25 @@ export function debounce<T extends (...args: any[]) => void>(fn: T, delay: numbe
   };
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
+
+
+export function getStatusColor(status: string) {
+  switch (status) {
+    case "pending":
+      return "bg-purple-100 text-purple-700 border-purple-200";
+    case "contacted":
+      return "bg-amber-100 text-amber-700 border-amber-200";
+    case "responded":
+      return "bg-green-100 text-green-700 border-green-200";
+    case "converted":
+      return "bg-blue-100 text-blue-700 border-blue-200";
+    case "rejected":
+      return "bg-red-100 text-red-700 border-red-200";
+    case "do-not-contact":
+      return "bg-gray-200 text-gray-700 border-gray-300";
+    case "followup":
+      return "bg-blue-100 text-blue-700 border-blue-200";
+    default:
+      return "bg-gray-100 text-gray-600 border-gray-200";
+  }
+}

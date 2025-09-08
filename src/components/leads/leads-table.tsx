@@ -17,6 +17,77 @@ import { useStore } from '@/store/useStore';
 import { formatDate, getStatusColor } from '@/lib/utils';
 import { Lead } from '@/types';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+
+const leads = [
+  {
+    id: 1,
+    firstName: "Om",
+    lastName: "Satyarthy",
+    position: "Regional Head",
+    campaign: { name: "Gynoveda" },
+    status: "pending",
+    statusLabel: "Pending Approval",
+    photo: "/avatars/om.png",
+    activityColor: "gray",
+  },
+  {
+    id: 2,
+    firstName: "Dr. Bhuvaneshwari",
+    lastName: "",
+    position: "Fertility & Women's Health",
+    campaign: { name: "Gynoveda" },
+    status: "contacted",
+    statusLabel: "Sent 7 mins ago",
+    photo: "/avatars/db.png",
+    activityColor: "yellow",
+  },
+  {
+    id: 3,
+    firstName: "Surdeep",
+    lastName: "Singh",
+    position: "Building Product-led SEO Growth",
+    campaign: { name: "Gynoveda" },
+    status: "contacted",
+    statusLabel: "Sent 7 mins ago",
+    photo: "/avatars/surdeep.png",
+    activityColor: "yellow",
+  },
+  {
+    id: 4,
+    firstName: "Sunil",
+    lastName: "Pal",
+    position: "Helping Fashion & Lifestyle Brands",
+    campaign: { name: "Digi Sidekick" },
+    status: "pending",
+    statusLabel: "Pending Approval",
+    photo: "/avatars/sunil.png",
+    activityColor: "gray",
+  },
+  {
+    id: 5,
+    firstName: "Utkarsh K.",
+    lastName: "",
+    position: "Airbnb Host | Ex-The Skin Story",
+    campaign: { name: "The Skin Story" },
+    status: "do-not-contact",
+    statusLabel: "Do Not Contact",
+    photo: "/avatars/utkarsh.png",
+    activityColor: "purple",
+  },
+  {
+    id: 6,
+    firstName: "Shreya",
+    lastName: "Ramakrishna",
+    position: "Deputy Manager - Founder’s Office",
+    campaign: { name: "Pokonut" },
+    status: "followup",
+    statusLabel: "Followup 10 mins ago",
+    photo: "/avatars/shreya.png",
+    activityColor: "blue",
+  },
+];
+
 
 async function fetchLeads({ pageParam = 1, filters = {} }) {
   const searchParams = new URLSearchParams({
@@ -74,7 +145,8 @@ export function LeadsTable() {
     };
   }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
-  const leads = data?.pages.flatMap((page) => page.data) || [];
+  const apileads = data?.pages.flatMap((page) => page.data) || [];
+  const displayleads = apileads.length > 0 ? apileads : leads;
 
   if (error) {
     return (
@@ -101,18 +173,15 @@ export function LeadsTable() {
                   }}
                 />
               </TableHead>
-              <TableHead>Lead Name</TableHead>
-              <TableHead>Email</TableHead>
-              <TableHead>Company</TableHead>
-              <TableHead>Campaign</TableHead>
+              <TableHead>Name</TableHead>
+              <TableHead>Campaign Name</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>Last Contact</TableHead>
-              <TableHead>Actions</TableHead>
+              <TableHead>Activity</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {isLoading ? (
-              Array.from({ length: 10 }).map((_, index) => (
+              Array.from({ length: 5 }).map((_, index) => (
                 <TableRow key={index}>
                   <TableCell><Skeleton className="h-4 w-4" /></TableCell>
                   <TableCell><Skeleton className="h-4 w-24" /></TableCell>
@@ -124,19 +193,19 @@ export function LeadsTable() {
                   <TableCell><Skeleton className="h-4 w-16" /></TableCell>
                 </TableRow>
               ))
-            ) : leads.length === 0 ? (
+            ) : displayleads.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={8} className="h-32 text-center">
+                <TableCell colSpan={5} className="h-32 text-center">
                   <div className="flex flex-col items-center justify-center space-y-2">
                     <p className="text-gray-500">No leads found</p>
                     <p className="text-sm text-gray-400">
-                      Try adjusting your filters or create a new lead
+                      Showing sample data instead
                     </p>
                   </div>
                 </TableCell>
               </TableRow>
             ) : (
-              leads.map((lead: Lead) => (
+              displayleads.map((lead: Lead) => (
                 <TableRow
                   key={lead.id}
                   className="cursor-pointer hover:bg-gray-50"
@@ -151,6 +220,14 @@ export function LeadsTable() {
                     />
                   </TableCell>
                   <TableCell>
+                    <div className='flex items-centerv gap-1'>
+                      <Image
+                      src={lead.photo || '/default-avatar.png'}
+                      alt={lead.firstName}
+                      className='w-10 h-10 rounded-full'
+                      width={10}
+                      height={10}
+                      />
                     <div>
                       <div className="font-medium text-gray-900">
                         {lead.firstName} {lead.lastName}
@@ -159,9 +236,8 @@ export function LeadsTable() {
                         <div className="text-sm text-gray-500">{lead.position}</div>
                       )}
                     </div>
+                    </div>
                   </TableCell>
-                  <TableCell className="text-gray-600">{lead.email}</TableCell>
-                  <TableCell className="text-gray-600">{lead.company || '-'}</TableCell>
                   <TableCell>
                     <span className="text-sm text-gray-600">
                       {lead.campaign?.name || '-'}
@@ -171,9 +247,6 @@ export function LeadsTable() {
                     <Badge className={getStatusColor(lead.status)}>
                       {lead.status.charAt(0).toUpperCase() + lead.status.slice(1)}
                     </Badge>
-                  </TableCell>
-                  <TableCell className="text-gray-600">
-                    {lead.lastContactDate ? formatDate(lead.lastContactDate) : '-'}
                   </TableCell>
                   <TableCell onClick={(e) => e.stopPropagation()}>
                     <Button

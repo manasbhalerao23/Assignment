@@ -38,6 +38,7 @@ export interface Lead {
   createdAt?: Date;
   updatedAt?: Date;
   campaign?: Campaign;
+  photo?: string
 }
 
 export interface LeadInteraction {

@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils';
 import { useStore } from '@/store/useStore';
 import { signOut, useSession } from '@/lib/auth-client';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const navigationItems = [
   {
@@ -54,6 +55,11 @@ export function Sidebar() {
   const handleSignOut = async () => {
     await signOut();
   };
+  const {theme} = useStore();
+  const logoSrc =
+    theme === 'dark'
+      ? 'https://linkbird.ai/images/linkbird-dark-logo.svg'
+      : 'https://linkbird.ai/images/linkbird-light-logo.svg';
 
   return (
     <div
@@ -63,28 +69,41 @@ export function Sidebar() {
       )}
     >
       {/* Header */}
-      <div className="flex h-16 items-center justify-between px-4 border-b">
-        {!isCollapsed && (
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-linkbird-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">L</span>
-            </div>
-            <span className="font-semibold text-gray-900">Linkbird.ai</span>
-          </div>
-        )}
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={toggleSidebar}
-          className="h-8 w-8"
-        >
-          {isCollapsed ? (
-            <ChevronRight className="h-4 w-4" />
-          ) : (
-            <ChevronLeft className="h-4 w-4" />
-          )}
-        </Button>
+      {/* Header */}
+<div className="flex h-16 items-center justify-between px-4 border-b">
+  {!isCollapsed && (
+    <div className="flex items-center space-x-3">
+      {/* Logo Icon */}
+      {/* <div className="w-10 h-10 bg-linkbird-500 rounded-xl flex items-center justify-center shadow-md">
+        <span className="text-white font-bold text-lg">L</span>
+      </div> */}
+
+      {/* Logo Image / Wordmark */}
+      <div className="relative w-28 h-8">
+        <Image
+          src={logoSrc}
+          alt="LinkBird Logo"
+          fill
+          className="object-contain"
+          priority
+        />
       </div>
+    </div>
+  )}
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={toggleSidebar}
+    className="h-8 w-8"
+  >
+    {isCollapsed ? (
+      <ChevronRight className="h-4 w-4" />
+    ) : (
+      <ChevronLeft className="h-4 w-4" />
+    )}
+  </Button>
+</div>
+
 
       {/* Navigation */}
       <nav className="flex-1 px-3 py-4">
@@ -97,10 +116,10 @@ export function Sidebar() {
                   href={item.href}
                   onClick={() => setActiveItem(item.key)}
                   className={cn(
-                    'flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                    'flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-blue-300',
                     isActive
                       ? 'bg-linkbird-50 text-linkbird-700 border-r-2 border-linkbird-500'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      : 'text-gray-600 hover:bg-blue-300 hover:text-gray-900'
                   )}
                 >
                   <item.icon
@@ -129,7 +148,7 @@ export function Sidebar() {
             <div className="flex-shrink-0">
               <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
                 {session.user.image ? (
-                  <img
+                  <Image
                     src={session.user.image}
                     alt={session.user.name || ''}
                     className="w-8 h-8 rounded-full"
@@ -153,7 +172,7 @@ export function Sidebar() {
               variant="ghost"
               size="icon"
               onClick={handleSignOut}
-              className="flex-shrink-0 h-8 w-8"
+              className="flex-shrink-0 h-8 w-8 hover:bg-red-500 hover:cursor-pointer"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />
