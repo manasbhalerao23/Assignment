@@ -14,7 +14,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useStore } from '@/store/useStore';
-import { formatDate, getStatusColor } from '@/lib/utils';
+import { getStatusColor } from '@/lib/utils';
 import { Lead } from '@/types';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -264,7 +264,7 @@ export function LeadsTable() {
         </Table>
       </div>
       
-      {/* Loading more indicator */}
+      {/* Loading more part*/}
       <div ref={loadMoreRef} className="h-10 flex items-center justify-center">
         {isFetchingNextPage && (
           <div className="flex items-center space-x-2 text-gray-500">

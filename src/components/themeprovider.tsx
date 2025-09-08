@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useStore } from '@/store/useStore'; // Adjust path as needed
+import { useStore } from '@/store/useStore'; 
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useStore((state) => state.theme); // 'light' | 'dark'

@@ -28,26 +28,6 @@ export async function GET(request: NextRequest) {
 
       const whereCondition = and(...filters); // always defined
 
-    //let whereCondition = eq(leads.userId, session.user.id);
-
-    // Add search filter
-    // if (search) {
-    //   whereCondition = and(
-    //     whereCondition,
-    //     ilike(leads.email, `%${search}%`)
-    //   );
-    // }
-
-    // // Add status filter
-    // if (status) {
-    //   whereCondition = and(whereCondition, eq(leads.status, status));
-    // }
-
-    // // Add campaign filter
-    // if (campaignId) {
-    //   whereCondition = and(whereCondition, eq(leads.campaignId, parseInt(campaignId)));
-    // }
-
     const offset = (page - 1) * limit;
 
     // Get leads with campaign information

@@ -16,7 +16,6 @@ export default function LeadsPage() {
           <p className="text-gray-600 mt-1">Manage and track your lead interactions</p>
         </div>
       </div>
-
       <LeadsFilters />
       <LeadsTable />
       <LeadDetailSheet />

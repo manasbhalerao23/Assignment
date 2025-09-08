@@ -5,7 +5,7 @@ export default function Pricetable(){
         <div>
   <section id="pricing" className="flex flex-col items-center justify-center">
       <div className="container pb-[100px] md:pb-[169px] max-w-6xl">
-        {/* Header Tag */}
+        {/* Header */}
         <div className="flex justify-center w-full">
           <div className="flex justify-center items-center bg-gray-100 dark:bg-[#060C14] mb-[23px]">
             <div className="text-gray-900 dark:text-white flex items-center gap-[14px] border border-gray-200 dark:border-[#232323] rounded-full px-[13px] py-[9px]">

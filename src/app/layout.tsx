@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Linkbird.ai - Lead Generation Platform',
   description: 'Manage your leads and campaigns efficiently',
+  icons: {
+    icon: "https://linkbird.ai/favicon.ico",
+  },
 };
 
 export default function RootLayout({

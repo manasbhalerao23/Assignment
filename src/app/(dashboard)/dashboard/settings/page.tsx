@@ -25,16 +25,16 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-8 pb-24">
-      {/* Header */}
+      {/* Header part */}
       <div>
         <h1 className="text-4xl font-bold tracking-tight">Settings</h1>
         <p className="text-gray-500 mt-2">Manage your account and preferences</p>
       </div>
 
-      {/* Grid */}
+      {/* Grid part*/}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          {/* Profile Settings */}
+          {/* Profile Settings part*/}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <Card className="rounded-2xl shadow-sm hover:shadow-md transition">
               <CardHeader>
@@ -79,7 +79,7 @@ export default function SettingsPage() {
             </Card>
           </motion.div>
 
-          {/* Notification Settings */}
+          {/* Notification Settings part*/}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
             <Card className="rounded-2xl shadow-sm hover:shadow-md transition">
               <CardHeader>
@@ -123,7 +123,7 @@ export default function SettingsPage() {
             </Card>
           </motion.div>
 
-          {/* API Settings */}
+          {/* API Settings part*/}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
             <Card className="rounded-2xl shadow-sm hover:shadow-md transition">
               <CardHeader>
@@ -152,7 +152,7 @@ export default function SettingsPage() {
           </motion.div>
         </div>
 
-        {/* Sidebar */}
+        {/* Sidebar part*/}
         <div className="space-y-8">
           {/* Account Overview */}
           <Card className="rounded-2xl shadow-sm">
@@ -187,7 +187,7 @@ export default function SettingsPage() {
             </CardContent>
           </Card>
 
-          {/* Quick Actions */}
+          {/* Quick Actions section*/}
           <Card className="rounded-2xl shadow-sm">
             <CardHeader>
               <CardTitle>Quick Actions</CardTitle>

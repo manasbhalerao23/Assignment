@@ -7,7 +7,7 @@ import { CircleCheck } from 'lucide-react';
 import { DarkModeToggle } from '@/components/darkmodetoggle';
 import Image from 'next/image';
 
-// --- Types ---
+// Data Types
 interface RecentActivity {
   lead: string;
   campaign: string;
@@ -35,7 +35,7 @@ function getStatusClasses(status: string) {
 }
 
 
-// --- API Fetch ---
+// API Fetching
 async function fetchDashboardData(): Promise<DashboardData | null> {
   try {
     const response = await fetch('/api/dashboard/data');
@@ -46,7 +46,7 @@ async function fetchDashboardData(): Promise<DashboardData | null> {
   }
 }
 
-// --- Fallback Mock Data ---
+// Fallback Mock Data(for sample) 
 const fallbackData: DashboardData = {
   campaigns: [
     { name: 'Just Herbs', status: 'Active' },
@@ -96,14 +96,14 @@ export default function DashboardPage() {
     queryFn: fetchDashboardData,
   });
 
-  // Use API data or fallback mock data
+  // Will Use API data or fallback mock data
   const dashboardData = data ?? fallbackData;
 
   if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="space-y-6 bg-gray-100 dark:bg-gray-900 min-h-screen p-6">
-      {/* Header */}
+      {/* Header part*/}
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-black dark:text-white">Dashboard</h1>
         <DarkModeToggle />
@@ -113,7 +113,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left Side */}
         <div className="space-y-6 lg:col-span-2">
-          {/* Campaigns */}
+          {/* Campaigns part*/}
           <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="dark:text-white">Campaigns</CardTitle>
@@ -135,25 +135,24 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
 
-          {/* LinkedIn Accounts */}
+          {/* LinkedIn Accounts section*/}
           <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="dark:text-white">LinkedIn Accounts</CardTitle>
             </CardHeader>
             <CardContent>
                {/* Headings */}
-    <div className="hidden md:flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 px-3">
-      <span className="flex-1">Account</span>
-      <span className="w-20 text-left">Status</span>
-      <span className="w-20 text-right">Requests</span>
-    </div>
+              <div className="hidden md:flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 px-3">
+                <span className="flex-1">Account</span>
+                <span className="w-20 text-left">Status</span>
+                <span className="w-20 text-right">Requests</span>
+              </div>
               <div className="space-y-3">
                 {dashboardData.accounts.map((a, i) => (
                   <div
                     key={i}
                     className="flex items-center justify-between p-3 border rounded-lg dark:border-gray-700"
                   >
-                     {/* Photo */}
                      <div className='flex items-center gap-3'>
                     <Image src={a.photo ?? '/default-avatar.png'} width={40} height={40} className="w-10 h-10 rounded-full mr-3" alt={a.name} />
                     <div>
@@ -167,7 +166,6 @@ export default function DashboardPage() {
                         {a.status}
                       </Badge>
                       <div className="flex-1">
-                        {/** Parse the fraction **/}
                         {(() => {
                           const [completed, total] = a.requests.split('/').map(Number);
                           const percentage = Math.min((completed / total) * 100, 100);
@@ -192,12 +190,11 @@ export default function DashboardPage() {
           </Card>
         </div>
 
-        {/* Right Side - Recent Activity */}
+        {/* Right Side - Recent Activity part*/}
         <div className="lg:col-span-3">
         <Card className="dark:bg-gray-800 dark:border-gray-700">
           <CardHeader>
             <CardTitle className="dark:text-white">Recent Activity</CardTitle>
-            {/* <CardDescription className="dark:text-gray-400">Latest interactions</CardDescription> */}
           </CardHeader>
           <CardContent>
             {/* Headings */}

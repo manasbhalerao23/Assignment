@@ -17,7 +17,7 @@ import { useStore } from '@/store/useStore';
 import { getStatusColor, calculateResponseRate } from '@/lib/utils';
 import { Campaign } from '@/types';
 
-// ✅ Dummy fallback campaigns
+// fallback data of campaigns
 const fallbackCampaigns: Campaign[] = Array.from({ length: 30 }).map((_, i) => ({
   id: i + 1,
   name: `Campaign ${i + 1}`,
@@ -40,7 +40,7 @@ export function CampaignsTable() {
   const { selectedCampaigns, toggleCampaignSelection } = useStore();
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ Infinite query
+  // Infinite query
   const {
     data,
     fetchNextPage,
@@ -57,7 +57,7 @@ export function CampaignsTable() {
     initialPageParam: 0,
   });
 
-  // ✅ Intersection Observer for infinite scroll
+  // Intersection Observer for infinite scroll
   useEffect(() => {
     if (!hasNextPage || !loadMoreRef.current) return;
 

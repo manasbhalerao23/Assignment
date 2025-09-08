@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
     const userId = session.user.id;
 
-    // Get campaign counts
+    // Getting campaign counts
     const userCampaigns = await db
       .select()
       .from(campaigns)
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     const totalCampaigns = userCampaigns.length;
     const activeCampaigns = userCampaigns.filter(c => c.status === 'active').length;
 
-    // Get total leads across all campaigns
+    // Getting total leads across all campaigns
     const totalLeadsResult = await db
       .select({ count: count(leads.id) })
       .from(leads)

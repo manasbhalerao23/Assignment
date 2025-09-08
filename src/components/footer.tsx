@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Legal */}
+          {/* Legal section*/}
           <div className="mb-8 text-[15px]">
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-4">

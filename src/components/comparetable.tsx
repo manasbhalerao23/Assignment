@@ -137,7 +137,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -150,7 +150,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Manual Only</span>
@@ -160,7 +160,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Manual Only</span>
@@ -185,7 +185,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -198,7 +198,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Limited By Plan</span>
@@ -208,7 +208,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Limited Tier</span>
@@ -233,7 +233,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -246,7 +246,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">No</span>
@@ -256,7 +256,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">No</span>
@@ -281,7 +281,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -294,7 +294,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Account Level Only</span>
@@ -304,7 +304,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Some Reporting Features</span>
@@ -329,7 +329,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -342,7 +342,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Moderate</span>
@@ -352,7 +352,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Moderate</span>
@@ -377,7 +377,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -390,7 +390,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">No Unique IP - Risk of Blocking</span>
@@ -400,7 +400,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">No IP - Browser Emulation</span>
@@ -425,7 +425,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -447,7 +447,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Yes</span>
@@ -466,7 +466,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Yes</span>
@@ -491,7 +491,7 @@ export default function CompareTabe(){
                             strokeLinejoin="round"
                             className="w-3 h-3 text-white"
                           >
-                            <path d="M5 13l4 4L19 7" /> {/* Correct checkmark path */}
+                            <path d="M5 13l4 4L19 7" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">
@@ -504,7 +504,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Individual Users</span>
@@ -514,7 +514,7 @@ export default function CompareTabe(){
                       <div className="flex items-center">
                         <div className="w-5 h-5 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
-                            <path d="M6 6l12 12M6 18L18 6" /> {/* Correct cross path */}
+                            <path d="M6 6l12 12M6 18L18 6" /> 
                           </svg>
                         </div>
                         <span className="text-sm md:text-base">Enterprise Teams</span>

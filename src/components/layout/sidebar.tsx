@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -68,41 +67,35 @@ export function Sidebar() {
         isCollapsed ? 'w-16' : 'w-64'
       )}
     >
-      {/* Header */}
-      {/* Header */}
-<div className="flex h-16 items-center justify-between px-4 border-b">
-  {!isCollapsed && (
-    <div className="flex items-center space-x-3">
-      {/* Logo Icon */}
-      {/* <div className="w-10 h-10 bg-linkbird-500 rounded-xl flex items-center justify-center shadow-md">
-        <span className="text-white font-bold text-lg">L</span>
-      </div> */}
 
-      {/* Logo Image / Wordmark */}
-      <div className="relative w-28 h-8">
-        <Image
-          src={logoSrc}
-          alt="LinkBird Logo"
-          fill
-          className="object-contain"
-          priority
-        />
+      {/* Header */}
+      <div className="flex h-16 items-center justify-between px-4 border-b">
+        {!isCollapsed && (
+          <div className="flex items-center space-x-3">
+            <div className="relative w-28 h-8">
+              <Image
+                src={logoSrc}
+                alt="LinkBird Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+        )}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleSidebar}
+          className="h-8 w-8"
+        >
+          {isCollapsed ? (
+            <ChevronRight className="h-4 w-4" />
+          ) : (
+            <ChevronLeft className="h-4 w-4" />
+          )}
+        </Button>
       </div>
-    </div>
-  )}
-  <Button
-    variant="ghost"
-    size="icon"
-    onClick={toggleSidebar}
-    className="h-8 w-8"
-  >
-    {isCollapsed ? (
-      <ChevronRight className="h-4 w-4" />
-    ) : (
-      <ChevronLeft className="h-4 w-4" />
-    )}
-  </Button>
-</div>
 
 
       {/* Navigation */}
