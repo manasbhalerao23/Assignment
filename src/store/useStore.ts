@@ -46,8 +46,8 @@ interface AppState {
   clearCampaignSelection: () => void;
 
   // Theme
-  theme: 'light' | 'dark' | 'system';
-  setTheme: (theme: 'light' | 'dark' | 'system') => void;
+  theme: 'light' | 'dark';
+  setTheme: (theme: 'light' | 'dark') => void;
 
   // Search state
   searchQuery: string;
@@ -170,7 +170,7 @@ export const useStore = create<AppState>()(
       clearCampaignSelection: () => set({ selectedCampaigns: [] }),
 
       // Theme
-      theme: 'system',
+      theme: 'light',
       setTheme: (theme) => set({ theme }),
 
       // Search
