@@ -9,6 +9,7 @@ import FaqSection from '@/components/faques';
 import Footer from '@/components/footer';
 import CompareTabe from '@/components/comparetable';
 import Pricetable from '@/components/pricetable';
+import Header from '@/components/ui/Header';
 
 // Reusable scroll animation wrapper
 function ScrollReveal({
@@ -41,65 +42,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Header */}
-        <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl bg-white/90 dark:bg-gray-700/30 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg backdrop-blur-md">
-          <div className="px-8">
-            <div className="flex items-center justify-between h-16">
-              
-              {/* Logo */}
-              <div className="flex items-center space-x-3">
-                <div className="h-10 sm:h-12 md:h-14 w-32 relative">
-                  <Image
-                    src={logoSrc}
-                    alt="LinkBird Logo"
-                    fill
-                    className="object-contain hover:cursor-pointer"
-                    priority
-                  />
-                </div>
-              </div>
-
-              {/* Navigation */}
-              <nav className="hidden md:flex space-x-8">
-                <Link
-                  href="/home"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-800 font-medium transition-colors"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/features"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-800 font-medium transition-colors"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-800 font-medium transition-colors"
-                >
-                  Pricing
-                </Link>
-              </nav>
-
-              {/* Auth / Dark Mode */}
-              <div className="flex items-center space-x-4">
-                  <DarkModeToggle />
-                
-                <Link
-                  href="/login"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-800 dark:hover:text-blue-800 px-4 py-2 rounded-md transition-colors font-medium"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/register"
-                  className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-lg transition-all transform hover:scale-105 font-medium"
-                >
-                  Get Started
-                </Link>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header logoSrc={logoSrc}/>
 
 {/* Main section */}
       <main className="container mx-auto pt-32 pb-10 flex flex-col items-center justify-center relative z-10">
