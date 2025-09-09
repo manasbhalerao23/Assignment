@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Assignment
 
-## Getting Started
+This project is a modern web application built with [Next.js](https://nextjs.org) and TypeScript. It provides an AI-driven productivity dashboard with user authentication, lead and campaign management, and a customizable, theme-aware UI. The app is ready for deployment on Vercel, and leverages a PostgreSQL database via Drizzle ORM.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Setup Instructions](#setup-instructions)
+- [API Documentation](#api-documentation)
+- [Database Schema](#database-schema)
+- [Deployment Instructions](#deployment-instructions)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/manasbhalerao23/Assignment.git
+   cd Assignment
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Configure environment variables**
+
+   Create a `.env.local` file based on `.env.example` and provide settings for:
+   - `DATABASE_URL` (PostgreSQL connection string)
+   - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` for Google OAuth
+   - `BETTER_AUTH_URL` (your app URL for auth callbacks)
+
+4. **Run database migrations**
+
+   If using Drizzle ORM, run:
+   ```bash
+   npm run drizzle:migrate
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## API Documentation
+
+### Authentication
+
+- **POST `/api/auth/login`**  
+  Login with email/password or via Google (OAuth).
+- **POST `/api/auth/register`**  
+  Register new users.
+- **GET `/api/auth/session`**  
+  Get current session details.
+- **POST `/api/auth/logout`**  
+  Logout the user.
+
+### Leads
+
+- **GET `/api/leads`**  
+  Returns a paginated list of leads.
+- **POST `/api/leads`**  
+  Create a new lead.
+- **GET `/api/leads/:id`**  
+  Retrieve details for a single lead.
+- **PUT `/api/leads/:id`**  
+  Update a lead.
+- **DELETE `/api/leads/:id`**  
+  Delete a lead.
+
+### Campaigns
+
+- **GET `/api/campaigns`**  
+  List all campaigns.
+- **POST `/api/campaigns`**  
+  Create a campaign.
+- **GET `/api/campaigns/:id`**  
+  Get a specific campaign.
+- **PUT `/api/campaigns/:id`**  
+  Update a campaign.
+- **DELETE `/api/campaigns/:id`**  
+  Delete a campaign.
+
+**Note:** All protected endpoints require a valid session.
+
+---
+
+## Database Schema
+
+The app uses PostgreSQL, managed through Drizzle ORM. Below is a summary of the main tables:
+
+### `user`
+
+| Column         | Type      | Constraints                  |
+|----------------|-----------|------------------------------|
+| id             | text      | PK                           |
+| name           | text      | not null                     |
+| email          | text      | not null, unique             |
+| emailVerified  | boolean   | default: false, not null     |
+| image          | text      |                              |
+| createdAt      | timestamp | default: now()               |
+| updatedAt      | timestamp | default: now()               |
+
+### `account`
+
+| Column      | Type   | Constraints                                 |
+|-------------|--------|---------------------------------------------|
+| id          | text   | PK                                          |
+| accountId   | text   | not null                                    |
+| providerId  | text   | not null                                    |
+| userId      | text   | not null, FK to user(id), onDelete: cascade |
+| accessToken | text   |                                             |
+| refreshToken| text   |                                             |
+| idToken     | text   |                                             |
+
+*Additional tables for leads, campaigns, and sessions are defined similarly.*
+
+---
+
+## Deployment Instructions
+
+The easiest way to deploy this Next.js app is via [Vercel](https://vercel.com/):
+
+1. **Push your code to GitHub.**
+2. **Connect your repository to Vercel:**  
+   Go to [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), import your repo, and set up environment variables for production.
+3. **Set up your PostgreSQL database**  
+   Use a managed service (e.g., Supabase, Neon, Railway) and update `DATABASE_URL` on Vercel.
+4. **Deploy!**  
+   Vercel will handle the build and deployment automatically.
+
+For more, see the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
+---
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Drizzle ORM Docs](https://orm.drizzle.team/docs/overview)
+- [Vercel Documentation](https://vercel.com/docs)
